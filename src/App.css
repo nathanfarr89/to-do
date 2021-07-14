@@ -56,8 +56,28 @@ html {
 h1 {
   text-transform: uppercase;
   font-weight: 300;
+  color: #fff;
 }
 
 .form {
   padding: 10px 0;
+}
+
+
+ion-icon {
+  color: #fff;
+}
+
+ion-icon:hover {
+  cursor: pointer;
+}
+
+.item {
+  color: #fff;
+  font-size: 120%;
+}
+
+.item p {
+  display: inline-block;
+  margin-right: 5px;
 }

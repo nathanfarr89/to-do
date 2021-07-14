@@ -1,8 +1,9 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import ToDoItem from './ToDoItem';
 
 const ToDoList = () => {
   const [toDoList, setToDoList] = useState([''])
+  console.log(toDoList)
   const [value, setValue] = useState('')
 
   const onSubmit = (e) => {
@@ -20,11 +21,9 @@ const ToDoList = () => {
     let index = items.indexOf(item)
     if (index !== -1) {
       items.splice(index, 1)
-      setToDoList(items)
+      setToDoList([...items])
     }
   }
-
-  useEffect(() => {console.log('updated')},[toDoList])
 
   return (
     <div className="container">
@@ -34,7 +33,7 @@ const ToDoList = () => {
       }
       {toDoList.map(item => {return <ToDoItem item={item} removeItem={removeItem} />})}
       <form className="form" onSubmit={onSubmit}>
-        <input type="text" value={value} onChange={onChange} placeholder="New Todo" /> 
+        <input type="text" value={value} onChange={onChange} placeholder="To Do..." /> 
       </form>
     </div>
   )
