@@ -10,7 +10,7 @@ const ToDoItem = (props) => {
   }
 
   const onComplete = () => {
-    setDone(true)
+    setDone(!done)
   }
   
   if (!item) return null
@@ -19,13 +19,16 @@ const ToDoItem = (props) => {
     <div
       className="item"
     >
-      <p style={{ 
+      <div style={{ 
         textDecoration: done ? "line-through" : 'none',
         textDecorationColor: done ? "red" : "none",
         textDecorationThickness: done ? "2px" : "none"
-      }}>{item}</p>
-      <ion-icon onClick={onComplete} name="checkmark-circle-outline"></ion-icon>
-      <ion-icon onClick={onRemove} name="close-circle-outline"></ion-icon>
+      }}>{item}</div>
+      <div>
+        { !done && <ion-icon onClick={onComplete} name="checkmark-circle-outline"></ion-icon>}
+        { done && <ion-icon onClick={onComplete} name="arrow-undo-circle-outline"></ion-icon>}
+        <ion-icon onClick={onRemove} name="close-circle-outline"></ion-icon>
+      </div>
     </div>
   )
 }

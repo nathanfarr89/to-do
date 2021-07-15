@@ -29,7 +29,7 @@ const ToDoList = () => {
     <div className="container">
       <h1>To Do:</h1>
       {toDoList.length < 2 && 
-        <p>Add item to begin list</p>
+        <p style={{ color: "#fff" }}>Add item to begin list</p>
       }
       {toDoList.map(item => {return <ToDoItem item={item} removeItem={removeItem} />})}
       <form className="form" onSubmit={onSubmit}>

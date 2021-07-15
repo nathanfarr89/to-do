@@ -57,6 +57,7 @@ h1 {
   text-transform: uppercase;
   font-weight: 300;
   color: #fff;
+  margin-bottom: 0;
 }
 
 .form {
@@ -73,6 +74,10 @@ ion-icon:hover {
 }
 
 .item {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 50%;
   color: #fff;
   font-size: 120%;
 }
